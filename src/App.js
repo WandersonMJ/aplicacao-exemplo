@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import { Container, Texto, Butao } from './styles'
 
 function App() {
+  const [valor, setValor] = useState(1)
+  const [valor2, setValor2] = useState(1)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Texto>{valor}</Texto>
+      <Texto>{valor2}</Texto>
+
+      <Butao onClick={function() {
+        setValor(valor + 1)
+        setValor2(valor2 + 2)
+      }}>Click aqui</Butao>
+    
+    </Container> 
   );
 }
 
